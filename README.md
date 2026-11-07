@@ -48,28 +48,28 @@ perceives, decides, and acts.
 
 ## The 20 laws
 
-| # | Law | Category | What it forces the AI to do |
-|---|-----|----------|------------------------------|
-| 1 | **Hick's Law** | Cognitive | Split complex flows into wizards, tabs, or accordions |
-| 2 | **Fitts's Law** | Cognitive | ≥44px targets; put CTAs where the hand already is |
-| 3 | **Jakob's Law** | Cognitive | Follow standard placement & platform conventions |
-| 4 | **Miller's Law** | Cognitive | Chunk fields, nav, and data into groups of 3–5 |
-| 5 | **Aesthetic-Usability** | Cognitive | Enforce a type scale and styled controls |
-| 6 | **Postel's Law** | Cognitive | Forgiving, auto-formatting input; graceful errors |
-| 7 | **Tesler's Law** | Cognitive | Absorb complexity in logic, not in the UI |
-| 8 | **Parkinson's Law** | Cognitive | Pre-fill, default, and automate |
-| 9 | **Proximity** | Gestalt | Tight label↔input, loose section gaps |
-| 10 | **Similarity** | Gestalt | Same role = identical visual tokens |
-| 11 | **Common Region** | Gestalt | Contain related modules in one surface |
-| 12 | **Closure** | Gestalt | Signal off-screen / loading content |
-| 13 | **Continuity** | Gestalt | Align on clean vertical & horizontal axes |
-| 14 | **Peak-End Rule** | Gestalt | Engineer a satisfying success state |
-| 15 | **Serial Position** | Attention | Priority at the start; terminal actions at the periphery |
-| 16 | **Von Restorff** | Attention | One accent colour for the one primary action |
-| 17 | **Occam's Razor** | Attention | Cut redundant decoration |
-| 18 | **Doherty Threshold** | Feedback | <400ms feedback on every async action |
-| 19 | **Goal-Gradient** | Feedback | Show progress on multi-step flows |
-| 20 | **Paradox of Choice** | Feedback | ≤3 options, with a marked "Recommended" default |
+| # | Law | Category | Attributed to | What it forces the AI to do |
+|---|-----|----------|---------------|------------------------------|
+| 1 | **Hick's Law** | Cognitive | William Edmund Hick (1952) | Split complex flows into wizards, tabs, or accordions |
+| 2 | **Fitts's Law** | Cognitive | Paul Fitts (1954) | ≥44px targets; put CTAs where the hand already is |
+| 3 | **Jakob's Law** | Cognitive | Jakob Nielsen (2000) | Follow standard placement & platform conventions |
+| 4 | **Miller's Law** | Cognitive | George A. Miller (1956) | Chunk fields, nav, and data into groups of 3–5 |
+| 5 | **Aesthetic-Usability** | Cognitive | Masaaki Kurosu & Kaori Kashimura (1995) | Enforce a type scale and styled controls |
+| 6 | **Postel's Law** | Cognitive | Jon Postel (1980) | Forgiving, auto-formatting input; graceful errors |
+| 7 | **Tesler's Law** | Cognitive | Larry Tesler | Absorb complexity in logic, not in the UI |
+| 8 | **Parkinson's Law** | Cognitive | C. Northcote Parkinson (1955) | Pre-fill, default, and automate |
+| 9 | **Proximity** | Gestalt | Gestalt psychology (Wertheimer, Koffka, Köhler) | Tight label↔input, loose section gaps |
+| 10 | **Similarity** | Gestalt | Gestalt psychology (Wertheimer, Koffka, Köhler) | Same role = identical visual tokens |
+| 11 | **Common Region** | Gestalt | Stephen Palmer (1992) | Contain related modules in one surface |
+| 12 | **Closure** | Gestalt | Gestalt psychology (Wertheimer, Koffka, Köhler) | Signal off-screen / loading content |
+| 13 | **Continuity** | Gestalt | Gestalt psychology (Wertheimer, Koffka, Köhler) | Align on clean vertical & horizontal axes |
+| 14 | **Peak-End Rule** | Gestalt | Daniel Kahneman (1993) | Engineer a satisfying success state |
+| 15 | **Serial Position** | Attention | Hermann Ebbinghaus (1885) | Priority at the start; terminal actions at the periphery |
+| 16 | **Von Restorff** | Attention | Hedwig von Restorff (1933) | One accent colour for the one primary action |
+| 17 | **Occam's Razor** | Attention | William of Ockham (14th c.) | Cut redundant decoration |
+| 18 | **Doherty Threshold** | Feedback | Walter J. Doherty & Ahrvind J. Thadani (1982) | <400ms feedback on every async action |
+| 19 | **Goal-Gradient** | Feedback | Clark Hull (1932) | Show progress on multi-step flows |
+| 20 | **Paradox of Choice** | Feedback | Barry Schwartz (2004) | ≤3 options, with a marked "Recommended" default |
 
 Every law states a concrete **rule** and a **violation → fix** example, so the agent learns the
 *behaviour*, not just the name.
@@ -146,6 +146,13 @@ Hick's Law, Fitts's Law, Jakob's Law, Miller's Law, Aesthetic-Usability Effect, 
 Tesler's Law, Parkinson's Law, Gestalt principles, Law of Proximity, Law of Similarity, Law of
 Common Region, Law of Closure, Law of Continuity, Peak-End Rule, Serial Position Effect, Von
 Restorff Effect, Occam's Razor, Doherty Threshold, Goal-Gradient Effect, Paradox of Choice.
+
+William Edmund Hick, Paul Fitts, Jakob Nielsen, George A. Miller, Masaaki Kurosu, Kaori Kashimura,
+Jon Postel, Larry Tesler, Cyril Northcote Parkinson, Max Wertheimer, Kurt Koffka, Wolfgang Köhler,
+Stephen Palmer, Daniel Kahneman, Hermann Ebbinghaus, Hedwig von Restorff, William of Ockham, Walter
+Doherty, Ahrvind Thadani, Clark Hull, Barry Schwartz, Hick-Hyman Law, Law of Conservation of
+Complexity, robustness principle, isolation effect, magical number seven, primacy effect, recency
+effect, Fitts's law of pointing.
 
 AI agent skill, Claude Code skill, Claude skill, Cursor rules, Cursor skill, AI coding rules, agent
 prompt, system prompt, agent instructions, LLM design rules, AI design assistant, AI UX designer,
