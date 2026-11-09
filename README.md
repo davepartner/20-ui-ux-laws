@@ -40,7 +40,8 @@ perceives, decides, and acts.
 ├── references/
 │   ├── design-tokens.md               # Stack-agnostic token system (spacing, type, colour, radius, motion)
 │   ├── pre-ship-checklist.md          # 20-law audit checklist — run before delivering any UI
-│   └── law-trace-examples.md          # Worked "Trace" examples (checkout, pricing, nav, tables…)
+│   ├── law-trace-examples.md          # Worked "Trace" examples (checkout, pricing, nav, tables…)
+│   └── account-and-legal-patterns.md  # Profile page, logout, privacy/terms/GDPR, support rules
 └── LICENSE                             # MIT
 ```
 
@@ -95,6 +96,25 @@ The agent runs a three-step protocol on every UI task:
    ```
 
 A UI is only "done" when it passes the **pre-ship checklist** and the Trace is attached.
+
+---
+
+## Account & auth surfaces (world-standard)
+
+Beyond the 20 laws, the skill ships **world-standard rules** for the surfaces every authenticated
+product shares:
+
+- **Profile page** — grouped into Personal info · Security · Preferences · Privacy & data · Danger
+  zone; email change re-verifies; delete account is confirmed and separated from deactivate; data
+  export and session revocation included.
+- **Logout** — the **last item in the user-profile dropdown**; opens a **confirmation dialog** with a
+  **"why are you logging out?"** select. The reason is **saved to the DB**, then the session is
+  **invalidated server-side**.
+- **Legal & support (required when authentication exists)** — Privacy Policy, Terms of Agreement,
+  GDPR sections, and a Support page, linked in the footer **and** at signup, reachable before account
+  creation.
+
+Full rules + checklist: `references/account-and-legal-patterns.md`.
 
 ---
 
@@ -165,3 +185,9 @@ optimization, user journey, customer goal, zero-friction UX, optimize onboarding
 multi-step form, wizard design, pricing page design, navigation design, perceived performance,
 optimistic UI, skeleton loading, loading states, feedback latency, <400ms, accessibility, WCAG,
 WCAG 2.5.8, target size, hit targets, 44px, aria, semantic HTML, responsive design, dark mode.
+
+Profile page, user profile, account settings, account page, profile design, logout, log out, sign
+out, logout flow, logout confirmation, logout reason, logout reason dropdown, delete account,
+deactivate account, account deletion, data export, download my data, active sessions, revoke
+sessions, privacy policy, terms of agreement, terms of service, ToS, GDPR, GDPR compliance, data
+subject rights, cookie consent, support page, help page, contact support, legal pages, consent.

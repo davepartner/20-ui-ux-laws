@@ -87,3 +87,19 @@ Trace:
 - Decision: Inline validation with error messages that preserve entered data
   → Law: Postel's Law (resilient input) + Doherty Threshold (instant inline feedback)
 ```
+
+---
+
+## 7. Profile Page & Logout
+
+```
+Trace:
+- Decision: Profile grouped into Personal info · Security · Preferences · Privacy & data · Danger zone
+  → Law: Miller's Law (3–5 chunks) + Law of Common Region (sectioned cards)
+- Decision: Logout is the LAST item in the profile dropdown
+  → Law: Serial Position Effect (terminal action at the periphery) + Jakob's Law (standard placement)
+- Decision: Logout opens a confirmation dialog with a "why are you logging out?" select
+  → Law: Fitts's Law (destructive action gated) + Peak-End Rule (a deliberate, safe ending)
+- Decision: Reason saved to the DB, then the session invalidated server-side
+  → Law: Postel's Law (optional input, never block) + trust/safety (real server-side logout)
+```

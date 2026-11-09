@@ -2,13 +2,16 @@
 name: ui-ux-20-laws
 description: >-
   Operationalize the 20 fundamental laws of UI/UX design into every interface an agent builds —
-  apps, design systems, and websites. Use when designing, building, or reviewing any user-facing
-  screen, component, form, navigation, pricing page, checkout, or onboarding flow. Enforces
-  zero-friction journeys, <400ms perceived performance, and clear visual hierarchy. Triggers:
-  "apply UI/UX laws", "design a form/checkout/pricing/onboarding flow", "make this interface more
-  usable", "review this UI against design principles", "reduce cognitive load", "improve perceived
-  performance", "Hick's Law", "Fitts's Law", "Miller's Law", "Gestalt", "accessibility target
-  sizes", "optimistic UI", "visual hierarchy", "chunk this form/nav/data".
+  apps, design systems, and websites — plus world-standard rules for account surfaces (profile page,
+  logout, privacy/terms/GDPR, support). Use when designing, building, or reviewing any user-facing
+  screen, component, form, navigation, pricing page, checkout, onboarding flow, profile page, or
+  account/auth surface. Enforces zero-friction journeys, <400ms perceived performance, and clear
+  visual hierarchy. Triggers: "apply UI/UX laws", "design a form/checkout/pricing/onboarding flow",
+  "profile page", "settings page", "logout flow", "delete account", "privacy policy", "terms of
+  service", "GDPR", "support page", "make this interface more usable", "review this UI against design
+  principles", "reduce cognitive load", "improve perceived performance", "Hick's Law", "Fitts's Law",
+  "Miller's Law", "Gestalt", "accessibility target sizes", "optimistic UI", "visual hierarchy",
+  "chunk this form/nav/data".
 ---
 
 # The 20 Laws of UI/UX — Operational Skill
@@ -28,6 +31,7 @@ design system). Apply it on top of whatever stack the target project uses.
 
 - Building or reviewing **any user-facing screen** (app, marketing site, dashboard, settings).
 - Designing **forms, wizards, navigation, pricing tiers, tables, lists, cards, dialogs**.
+- Building **account surfaces** — profile pages, logout flows, and legal/support pages.
 - Establishing a **design-token foundation** for a new or inherited project.
 - Auditing an existing UI for **usability, accessibility, or perceived performance**.
 
@@ -155,6 +159,39 @@ Users expect a response within 400ms or they lose focus.
 
 ---
 
+## Part 4 — World-Standard Account & Auth Surfaces
+
+These extend the laws to the surfaces every authenticated product shares. Full rules:
+`references/account-and-legal-patterns.md`.
+
+### Profile page
+- Group into **Personal info · Security · Preferences · Privacy & data · Danger zone** (≤5; Miller).
+- **Avatar** with initials fallback; **email change re-verifies** the new address; **password change**
+  requires the current password.
+- **Delete account** lives in a visually separated "danger zone", requires explicit confirmation, and
+  explains what is deleted vs retained. Offer **deactivate** (reversible) separately.
+- Offer **data export** (GDPR portability) and **active sessions/devices** with revoke.
+- Never display secrets; mask sensitive PII; optimistic save + inline errors + toasts.
+
+### Logout (exact requirements)
+- Place **Logout as the last item in the user-profile dropdown** (Serial Position + Jakob's Law).
+- On click, open a **confirmation dialog** — not an instant logout — containing a **"Why are you
+  logging out?" select dropdown**.
+- On confirm, `POST /auth/logout { reason }`: the server **records the reason in the DB** (e.g.
+  `logout_events`), then **invalidates the session server-side** (revoke token, clear cookies).
+- The reason is **optional** (never block logout); store `prefer_not_to_say` if skipped.
+- Focus-trapped modal, `Esc` cancels, `Cancel` is the safe default; redirect to a public page after.
+
+### Legal & support (required when authentication exists)
+- Ship **Privacy Policy**, **Terms of Agreement**, **GDPR sections**, and a **Support page**.
+- Link them in the **footer on every page** *and* at signup ("you agree to…"), reachable **before**
+  account creation.
+- GDPR: lawful basis, data-subject rights (access/erasure/portability), DPO contact, and a **granular
+  cookie-consent** banner (accept/reject equal prominence, no pre-ticked boxes).
+- Show an **effective date + version**; notify users of material changes.
+
+---
+
 ## Execution Protocol
 
 For every component, page, or flow you build, follow this three-step protocol.
@@ -203,6 +240,8 @@ Trace:
 - **Feedback latency:** any async operation shows feedback within 400ms.
 - **Error recovery:** never lose user input on error; show actionable messages.
 - **Dark/light:** all surfaces define tokens for both modes (see design tokens reference).
+- **Auth + legal:** any product with accounts ships a Privacy Policy, Terms, GDPR sections, and a
+  Support page — linked in the footer and at signup (see `references/account-and-legal-patterns.md`).
 
 ---
 
@@ -214,7 +253,9 @@ Load these for depth when the task requires it:
   radius, motion) with concrete CSS custom-property examples.
 - `references/pre-ship-checklist.md` — the full 20-law audit checklist to run before delivering.
 - `references/law-trace-examples.md` — worked "Trace" examples for common patterns (forms, pricing,
-  navigation, dashboards, tables).
+  navigation, dashboards, tables, profile/logout).
+- `references/account-and-legal-patterns.md` — world-standard rules for profile pages, logout
+  (confirmation + reason saved to DB), and privacy/terms/GDPR/support pages.
 
 **Rule for output:** Always end a UI task by running the pre-ship checklist and appending the
 `Trace` block. Never claim a UI is "done" without both.
